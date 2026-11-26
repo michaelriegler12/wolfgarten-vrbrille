@@ -102,6 +102,38 @@
     return plane;
   }
 
+
+  function addVRExitButton() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 600;
+    canvas.height = 160;
+
+    const ctx = canvas.getContext('2d');
+
+    ctx.fillStyle = '#F2E6CA';
+    ctx.fillRect(0, 0, 600, 160);
+
+    ctx.strokeStyle = '#83AB2E';
+    ctx.lineWidth = 12;
+    ctx.strokeRect(6, 6, 588, 148);
+
+    ctx.fillStyle = '#24417B';
+    ctx.font = 'bold 48px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('VR verlassen', 300, 80);
+
+    const exitButton = texturePlane(
+      canvas, vrCamera, 0.48, '0.85 0.65 -2'
+    );
+
+    exitButton.classList.add('clickable');
+
+    exitButton.addEventListener('click', async () => {
+      await vrScene.exitVR();
+    });
+  }
+
   async function updateHud() {
     if (!vrHud) return;
 
@@ -391,6 +423,7 @@
 
     vrHud = entity('a-entity', {}, vrCamera);
     vrDialog = entity('a-entity', {}, vrCamera);
+    addVRExitButton();
 
     ['left', 'right'].forEach(hand => {
       entity('a-entity', {
