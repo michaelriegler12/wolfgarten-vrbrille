@@ -1,0 +1,23 @@
+.DS_Store
+._*
+backup*/
+*backup*
+*Backup*
+*vor-*
+START-WOLFGARTEN.bat
+index.txt
+
+# Lokale Sicherungen
+backup-original/
+.venv/
+.DS_Store
+
+# Alter VR-Prototyp
+vr-test/index.html
+vr-test/prototyp.html
+vr-test/challenge.js
+vr-test/*.jpg
+
+# Zertifikate und private Schlüssel
+*.pem
+*.key

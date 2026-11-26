@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Title</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+
+
+
+<style id="wolfCompactHudStyle">
+/* Kompakte Punkteanzeige rechts oben */
+#wolfHud {
+  position: fixed !important;
+  top: 12px !important;
+  right: 72px !important;
+  left: auto !important;
+  bottom: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 36px !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  border-radius: 8px !important;
+  background: #24417B !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.15) !important;
+  z-index: 100 !important;
+}
+
+#wolfHud > strong,
+#wolfProgressTrack,
+#wolfEditToggle,
+#wolfReset {
+  display: none !important;
+}
+
+#wolfScore,
+#wolfProgress {
+  display: inline !important;
+  position: static !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #FFFFFF !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+#wolfProgress {
+  color: #CEE697 !important;
+}
+
+@media (max-width: 600px) {
+  #wolfHud {
+    top: 8px !important;
+    right: 52px !important;
+    height: 30px !important;
+    padding: 0 8px !important;
+    gap: 6px !important;
+  }
+
+  #wolfScore,
+  #wolfProgress {
+    font-size: 11px !important;
+  }
+}
+</style>
+
+
+
+
+
+<style id="wolfHudPositionFix">
+#wolfHud {
+  position: fixed !important;
+  top: 125px !important;
+  right: 48px !important;
+  transform: translateY(-125px) !important;
+  height: 42px !important;
+  padding: 0 12px !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: #24417B !important;
+  z-index: 1000 !important;
+}
+
+#wolfHud > strong,
+#wolfProgressTrack,
+#wolfEditToggle,
+#wolfReset {
+  display: none !important;
+}
+</style>
+
+
+<style id="wolfChallengeToolbar">
+/* Gemeinsame Leiste: Punkte | Neustart | Fullscreen */
+
+#wolfHud {
+  position: fixed !important;
+  top: 0 !important;
+  right: 184px !important;
+  left: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  padding: 0 16px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #24417B !important;
+  box-shadow: none !important;
+  max-width: none !important;
+  z-index: 1000 !important;
+}
+
+#wolfHud > strong,
+#wolfProgressTrack,
+#wolfEditToggle {
+  display: none !important;
+}
+
+#wolfScore,
+#wolfProgress {
+  display: inline !important;
+  position: static !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+#wolfScore {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+#wolfProgress {
+  color: #CEE697 !important;
+  opacity: 1 !important;
+}
+
+#wolfReset {
+  display: flex !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 50px !important;
+  width: 134px !important;
+  height: 50px !important;
+  box-sizing: border-box !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #83AB2E !important;
+  color: white !important;
+  font: 700 14px Arial, sans-serif !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  z-index: 1001 !important;
+}
+
+#fullscreenToggle {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 50px !important;
+  height: 50px !important;
+  box-sizing: border-box !important;
+  padding: 5px !important;
+  background: #F2E6CA !important;
+  z-index: 1001 !important;
+}
+
+#fullscreenToggle .icon {
+  top: 10px !important;
+  right: 10px !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+#wolfgarten-neustart-button {
+  display: none !important;
+}
+</style>
+
+</head>
+
+<body class="multiple-scenes view-control-buttons">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+        <a href="javascript:void(0)" class="scene" data-id="4-aufenthaltsraum"><li class="text">Aufenthaltsraum</li></a>
+<a href="javascript:void(0)" class="scene" data-id="6-aueneingang"><li class="text">Außeneingang</li></a>
+<a href="javascript:void(0)" class="scene" data-id="7-bibliothek"><li class="text">Bibliothek</li></a>
+<a href="javascript:void(0)" class="scene" data-id="10-chemiesaal"><li class="text">Chemiesaal</li></a>
+<a href="javascript:void(0)" class="scene" data-id="32-direktionneu"><li class="text">Direktion</li></a>
+<a href="javascript:void(0)" class="scene" data-id="19-musiksaal"><li class="text">Musiksaal</li></a>
+<a href="javascript:void(0)" class="scene" data-id="21-physiksaal1"><li class="text">Physiksaal</li></a>
+<a href="javascript:void(0)" class="scene" data-id="23-sekretariat1"><li class="text">Sekretariat</li></a>
+<a href="javascript:void(0)" class="scene" data-id="25-sportplatz"><li class="text">Sportplatz</li></a>
+<a href="javascript:void(0)" class="scene" data-id="26-sprachenraum"><li class="text">Sprachenraum</li></a>
+<a href="javascript:void(0)" class="scene" data-id="24-speisesaal1"><li class="text">Tagesheim</li></a>
+<a href="javascript:void(0)" class="scene" data-id="29-turnsaal"><li class="text">Turnsaal</li></a>
+<a href="javascript:void(0)" class="scene" data-id="36-werksaal"><li class="text">Werksaal</li></a>
+<a href="javascript:void(0)" class="scene" data-id="30-zeichensaal"><li class="text">Zeichensaal</li></a>
+      </div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<div id="wolfHud" aria-live="polite"><strong>🐺 Wolfgarten-Challenge</strong><span id="wolfScore">0 Punkte</span><small id="wolfProgress">0 von 22 Aufgaben entdeckt</small>
+<div id="wolfProgressTrack"><div id="wolfProgressBar"></div></div><button type="button" id="wolfReset">Neu starten</button></div>
+<div id="wolfModal" role="dialog" aria-modal="true" aria-label="Wolfgarten Challenge" aria-hidden="true"><div class="wolf-dialog"><button id="wolfClose" type="button" aria-label="Schließen">×</button><div id="wolfModalContent"></div></div></div>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script>
+fetch('wolfgarten-konfiguration.json', {cache: 'no-store'})
+  .then(function(response) { if (!response.ok) throw new Error('HTTP ' + response.status); return response.json(); })
+  .then(function(config) {
+    // Exportierte Konfiguration unterstützt extraTasks.
+    if ((!Array.isArray(config.tasks) || config.tasks.length === 0)
+        && Array.isArray(config.extraTasks)) {
+      config.tasks = config.extraTasks;
+    }
+
+    if (!Array.isArray(config.tasks) || config.tasks.length === 0) {
+      throw new Error('Keine gültigen Aufgaben gefunden.');
+    }
+    window.WOLF_STUDENT_CONFIG = config;
+    var script = document.createElement('script');
+    script.src = 'wolfgarten-v2.js?v=878f41b5';
+    script.onload = function() {
+      var ui = document.createElement('script');
+      ui.src = 'wolfgarten-challenge-ui.js';
+      document.body.appendChild(ui);
+    };
+    document.body.appendChild(script);
+  })
+  .catch(function(error) {
+    console.error(error);
+    alert('Wolfgarten-Challenge konnte nicht geladen werden: ' + error.message);
+  });
+</script>
+
+
+
+
+<script src="wolfgarten-vr.js"></script>
+</body>
+</html>

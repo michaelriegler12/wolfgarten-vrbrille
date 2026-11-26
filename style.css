@@ -1,0 +1,1642 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  -ms-content-zooming: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  background-color: #000;
+  color: #fff;
+}
+
+a, a:hover, a:active, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+#pano {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#titleBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.mobile #titleBar {
+  height: 50px;
+  right: 50px;
+}
+
+/* If there is a fullscreen button the title bar must make space for it */
+body.fullscreen-enabled #titleBar {
+  right: 80px;
+}
+
+body.fullscreen-enabled.mobile #titleBar {
+  right: 100px;
+}
+
+/* If there are multiple scenes the title bar must make space for the scene list toggle */
+body.multiple-scenes #titleBar {
+  left: 40px;
+}
+
+body.multiple-scenes.mobile #titleBar {
+  left: 50px;
+}
+
+#titleBar .sceneName {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  padding: 5px;
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.mobile #titleBar .sceneName {
+  line-height: 40px;
+}
+
+#fullscreenToggle {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+.mobile #fullscreenToggle {
+  width: 50px;
+  height: 50px;
+}
+
+body.fullscreen-enabled #fullscreenToggle {
+  display: block;
+}
+
+#fullscreenToggle .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.mobile #fullscreenToggle .icon {
+  top: 10px;
+  right: 10px;
+}
+
+#fullscreenToggle .icon.on {
+  display: none;
+}
+
+#fullscreenToggle .icon.off {
+  display: block;
+}
+
+#fullscreenToggle.enabled .icon.on {
+  display: block;
+}
+
+#fullscreenToggle.enabled .icon.off {
+  display: none;
+}
+
+#autorotateToggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+.mobile #autorotateToggle {
+  width: 50px;
+  height: 50px;
+}
+
+/* If there is a fullscreen button, autorotate must placed a bit to the left */
+body.fullscreen-enabled #autorotateToggle {
+  right: 40px;
+}
+
+body.fullscreen-enabled.mobile #autorotateToggle {
+  right: 50px;
+}
+
+#autorotateToggle .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.mobile #autorotateToggle .icon {
+  top: 10px;
+  right: 10px;
+}
+
+#autorotateToggle .icon.on {
+  display: none;
+}
+
+#autorotateToggle .icon.off {
+  display: block;
+}
+
+#autorotateToggle.enabled .icon.on {
+  display: block;
+}
+
+#autorotateToggle.enabled .icon.off {
+  display: none;
+}
+
+#sceneListToggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+.mobile #sceneListToggle {
+  width: 50px;
+  height: 50px;
+}
+
+#sceneListToggle .text {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+  width: 100%;
+  line-height: 30px;
+}
+
+#sceneListToggle .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.mobile #sceneListToggle .icon {
+  top: 10px;
+  right: 10px;
+}
+
+#sceneListToggle .icon.on {
+  display: none;
+}
+
+#sceneListToggle .icon.off {
+  display: block;
+}
+
+#sceneListToggle.enabled .icon.on {
+  display: block;
+}
+
+#sceneListToggle.enabled .icon.off {
+  display: none;
+}
+
+#sceneList {
+  position: absolute;
+  top: 0;
+  left: -220px;
+  padding-top: 40px;
+  width: 220px;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-left: 0;
+  -webkit-transition: margin-left 0.5s ease-in-out;
+  transition: margin-left 0.5s ease-in-out;
+}
+
+.mobile #sceneList {
+  padding-top: 50px;
+}
+
+#sceneList .scenes {
+  width: 100%;
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+}
+
+.mobile #sceneList {
+  width: 100%;
+  height: 100%;
+  left: -100%;
+}
+
+.mobile #sceneList.enabled {
+  margin-left: 100%;
+}
+
+.mobile #sceneList .scenes {
+  height: 100%;
+}
+
+#sceneList.enabled {
+  margin-left: 220px;
+}
+
+#sceneList .scene {
+  display: block;
+  width: 100%;
+  height: 30px;
+}
+
+.mobile #sceneList .scene {
+  height: 40px;
+}
+
+#sceneList .scene .text {
+  width: 100%;
+  height: 100%;
+  padding: 0 15px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mobile #sceneList .scene .text {
+  line-height: 40px;
+}
+
+.no-touch #sceneList .scene:hover {
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+#sceneList .scene.current {
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+/* Hide scene list when only a single scene exists */
+body.single-scene #sceneList, body.single-scene #sceneListToggle {
+  display: none;
+}
+
+/* Link hotspot */
+
+.link-hotspot {
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.no-touch .link-hotspot:hover {
+  opacity: 1;
+}
+
+.mobile .link-hotspot {
+  width: 70px;
+  height: 70px;
+}
+
+.link-hotspot-icon {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.link-hotspot-tooltip {
+  position: absolute;
+  left: 100%;
+  top: 14px; /* ( 60 - (16 + 2*8) ) / 2 */
+
+  margin-left: 3px;
+
+  font-size: 16px;
+
+  max-width: 300px;
+
+  padding: 8px 10px;
+
+  border-radius: 5px;
+
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+
+  color: #fff;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  cursor: pointer;
+
+  opacity: 0;
+
+  -ms-transform: translateX(-8px);
+  -webkit-transform: translateX(-8px);
+  transform: translateX(-8px);
+
+  -webkit-transition: -ms-transform 0.3s,
+                      -webkit-transform 0.3s,
+                      transform 0.3s,
+                      opacity 0.3s;
+  transition: -ms-transform 0.3s,
+              -webkit-transform 0.3s,
+              transform 0.3s,
+              opacity 0.3s;
+}
+
+.mobile .link-hotspot {
+  top: 19px; /* ( 70 - (16 + 2*8) ) / 2 */
+}
+
+.no-touch .link-hotspot:hover .link-hotspot-tooltip {
+  opacity: 1;
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+/* Prevent tooltip from triggering */
+.link-hotspot-tooltip {
+  pointer-events: none;
+}
+.no-touch .link-hotspot:hover .link-hotspot-tooltip {
+  pointer-events: all;
+}
+
+/* Fallback mode without pointer-events (IE8-10) */
+.tooltip-fallback .link-hotspot-tooltip {
+  display: none;
+}
+.no-touch .tooltip-fallback .link-hotspot:hover .link-hotspot-tooltip {
+  display: block;
+}
+
+/* Info hotspot */
+
+.info-hotspot {
+  line-height: 1.2em;
+  opacity: 0.9;
+  -webkit-transition: opacity 0.2s 0.2s;
+  transition: opacity 0.2s 0.2s;
+}
+
+.no-touch .info-hotspot:hover {
+  opacity: 1;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.info-hotspot.visible {
+  opacity: 1;
+}
+
+.info-hotspot .info-hotspot-header {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(103,115,131);
+  cursor: pointer;
+  -webkit-transition: width 0.3s ease-in-out 0.5s,
+                      border-radius 0.3s ease-in-out 0.5s;
+  transition: width 0.3s ease-in-out 0.5s,
+              border-radius 0.3s ease-in-out 0.5s;
+}
+
+.mobile .info-hotspot .info-hotspot-header {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.desktop.no-touch .info-hotspot .info-hotspot-header:hover {
+  width: 260px;
+  border-radius: 5px;
+  -webkit-transition: width 0.3s ease-in-out,
+                      border-radius 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out,
+              border-radius 0.3s ease-in-out;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-header,
+.desktop.no-touch .info-hotspot.visible .info-hotspot-header:hover {
+  width: 260px;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-transition: width 0.3s ease-in-out,
+                      border-radius 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out,
+              border-radius 0.3s ease-in-out;
+}
+
+.info-hotspot .info-hotspot-icon-wrapper {
+  width: 40px;
+  height: 40px;
+}
+
+.mobile .info-hotspot .info-hotspot-icon-wrapper {
+  width: 50px;
+  height: 50px;
+}
+
+.info-hotspot .info-hotspot-icon {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+
+.info-hotspot .info-hotspot-title-wrapper {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 0;
+  height: 40px;
+  padding: 0;
+  overflow: hidden;
+  -webkit-transition: width 0s 0.4s,
+                      padding 0s 0.4s;
+  transition: width 0s 0.4s,
+              padding 0s 0.4s;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-title-wrapper,
+.desktop.no-touch .info-hotspot .info-hotspot-header:hover .info-hotspot-title-wrapper {
+  width: 220px;
+  padding: 0 5px;
+  -webkit-transition: width 0s 0.4s,
+                      padding 0s 0.4s;
+  transition: width 0s 0.4s,
+              padding 0s 0.4s;
+}
+
+.info-hotspot .info-hotspot-title-wrapper:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.info-hotspot .info-hotspot-title {
+  display: inline-block;
+  vertical-align: middle;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.info-hotspot .info-hotspot-close-wrapper {
+  position: absolute;
+  left: 260px;
+  top: 0;
+  height: 40px;
+  width: 40px;
+  border-top-right-radius: 5px;
+  background-color: rgb(78,88,104);
+  visibility: hidden;
+  -ms-transform: perspective(200px) rotateY(90deg);
+  -webkit-transform: perspective(200px) rotateY(90deg);
+  transform: perspective(200px) rotateY(90deg);
+  -ms-transform-origin: 0 50% 0;
+  -webkit-transform-origin: 0 50% 0;
+  transform-origin: 0 50% 0;
+  -webkit-transition: -ms-transform 0.3s 0.3s,
+                      -webkit-transform 0.3s 0.3s,
+                      transform 0.3s 0.3s,
+                      visibility 0s 0.6s;
+  transition: -ms-transform 0.3s 0.3s,
+              -webkit-transform 0.3s 0.3s,
+              transform 0.3s 0.3s,
+              visibility 0s 0.6s;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-close-wrapper {
+  visibility: visible;
+  -ms-transform: perspective(200px) rotateY(0deg);
+  -webkit-transform: perspective(200px) rotateY(0deg);
+  transform: perspective(200px) rotateY(0deg);
+  -webkit-transition: -ms-transform 0.3s,
+                      -webkit-transform 0.3s,
+                      transform 0.3s,
+                      visibility 0s 0s;
+  transition: -ms-transform 0.3s,
+              -webkit-transform 0.3s,
+              transform 0.3s,
+              visibility 0s 0s;
+}
+
+.info-hotspot .info-hotspot-close-icon {
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+}
+
+.info-hotspot .info-hotspot-text {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  max-height: 200px;
+  top: 40px;
+  left: 0;
+  padding: 10px;
+  background-color: rgb(58,68,84);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow-y: auto;
+  visibility: hidden;
+  /* rotate(90deg) causes transition flicker on Firefox 58 */
+  -ms-transform: perspective(200px) rotateX(-89.999deg);
+  -webkit-transform: perspective(200px) rotateX(-89.999deg);
+  transform: perspective(200px) rotateX(-89.999deg);
+  -ms-transform-origin: 50% 0 0;
+  -webkit-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+  -webkit-transition: -ms-transform 0.3s,
+                      -webkit-transform 0.3s,
+                      transform 0.3s,
+                      visibility 0s 0.3s;
+  transition: -ms-transform 0.3s,
+              -webkit-transform 0.3s,
+              transform 0.3s,
+              visibility 0s 0.3s;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.desktop .info-hotspot.visible .info-hotspot-text {
+  visibility: visible;
+  -ms-transform: perspective(200px) rotateX(0deg);
+  -webkit-transform: perspective(200px) rotateX(0deg);
+  transform: perspective(200px) rotateX(0deg);
+  -webkit-transition: -ms-transform 0.3s 0.3s,
+                      -webkit-transform 0.3s 0.3s,
+                      transform 0.3s 0.3s,
+                      visibility 0s 0s;
+  transition: -ms-transform 0.3s 0.3s,
+              -webkit-transform 0.3s 0.3s,
+              transform 0.3s 0.3s,
+              visibility 0s 0s;
+}
+
+/* Info hotspot modal */
+
+.desktop .info-hotspot-modal {
+  display: none;
+}
+
+.info-hotspot-modal {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 11000 !important;
+  background-color: rgba(0,0,0,.5);
+  line-height: 1.2em;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s ease-in-out 0.5s,
+                      visibility 0s 0.7s;
+  transition: opacity 0.2s ease-in-out 0.5s,
+              visibility 0s 0.7s;
+}
+
+.info-hotspot-modal.visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.2s ease-in-out,
+                      visibility 0s 0s;
+  transition: opacity 0.2s ease-in-out,
+              visibility 0s 0s;
+}
+
+.info-hotspot-modal .info-hotspot-header {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  right: 10px;
+  width: auto;
+  height: 50px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out 0.2s;
+  transition: opacity 0.3s ease-in-out 0.2s;
+}
+
+.info-hotspot-modal.visible .info-hotspot-header {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out 0.2s;
+  transition: opacity 0.3s ease-in-out 0.2s;
+}
+
+.info-hotspot-modal .info-hotspot-icon-wrapper {
+  width: 50px;
+  height: 50px;
+}
+
+.info-hotspot-modal .info-hotspot-icon {
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+
+.info-hotspot-modal .info-hotspot-title-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50px;
+  right: 50px;
+  width: auto;
+  height: 50px;
+  padding: 0 10px;
+}
+
+.info-hotspot-modal .info-hotspot-title-wrapper:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.info-hotspot-modal .info-hotspot-title {
+  display: inline-block;
+  vertical-align: middle;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.info-hotspot-modal .info-hotspot-close-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(78,88,104);
+  background-color: rgba(78,88,104,0.8);
+  cursor: pointer;
+}
+
+.info-hotspot-modal .info-hotspot-close-icon {
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+}
+
+.info-hotspot-modal .info-hotspot-text {
+  position: absolute;
+  top: 110px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  padding: 10px;
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+  overflow-y: auto;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.info-hotspot-modal.visible .info-hotspot-text {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-in-out 0.4s;
+  transition: opacity 0.3s ease-in-out 0.4s;
+}
+
+/* View control buttons */
+
+.viewControlButton {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(103,115,131);
+  background-color: rgba(103,115,131,0.8);
+}
+
+body.view-control-buttons .viewControlButton {
+  display: block;
+}
+
+/* Hide controls when width is too small */
+@media (max-width: 600px) {
+  body.view-control-buttons .viewControlButton {
+    display: none;
+  }
+}
+
+.viewControlButton .icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+/* Center is at margin-left: -20px */
+.viewControlButton-1 {
+  margin-left: -145px;
+}
+.viewControlButton-2 {
+  margin-left: -95px;
+}
+.viewControlButton-3 {
+  margin-left: -45px;
+}
+.viewControlButton-4 {
+  margin-left: 5px;
+}
+.viewControlButton-5 {
+  margin-left: 55px;
+}
+.viewControlButton-6 {
+  margin-left: 105px;
+}
+
+/* Wolfgarten Challenge */
+#wolfHud {position:fixed;right:16px;top:16px;z-index:1000;background:rgba(8,32,53,.93);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:15px;padding:13px 16px;display:flex;flex-direction:column;gap:5px;box-shadow:0 5px 25px #0005;font:14px Arial,sans-serif;max-width:210px}
+#wolfHud strong{font-size:15px}#wolfHud small{opacity:.8}#wolfReset{border:1px solid #ffffff70;border-radius:7px;background:transparent;color:white;padding:6px;cursor:pointer;margin-top:4px}
+.wolf-hotspot{width:56px;height:56px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font-size:29px;cursor:pointer;background:#0a5479ed;box-shadow:0 4px 15px #0009;transition:none}
+.wolf-hotspot:hover{filter:brightness(1.15)}.wolf-hotspot.wolf-coin{background:#9c6d08ed}.wolf-hotspot.completed{opacity:.48;filter:grayscale(.8)}
+#wolfModal{display:none;position:fixed;inset:0;z-index:3000;background:#000a;align-items:center;justify-content:center;padding:18px}
+#wolfModal.open{display:flex}.wolf-dialog{background:#f8fbfd;color:#173248;border-radius:18px;position:relative;width:min(100%,470px);padding:27px;box-shadow:0 10px 40px #0008;font:16px/1.45 Arial,sans-serif}
+.wolf-dialog h2{font-size:23px;margin:0 30px 16px 0}.wolf-dialog p{margin:0 0 15px}
+#wolfClose{position:absolute;right:13px;top:10px;border:0;background:none;color:#173248;font-size:30px;cursor:pointer}
+.wolf-answer{display:block;width:100%;background:#e6eff5;color:#163449;text-align:left;border:1px solid #bbd1df;border-radius:9px;padding:12px;margin:9px 0;cursor:pointer;font:inherit}
+.wolf-answer:hover:not(:disabled){background:#cde5f3}.wolf-answer:disabled{opacity:.65;cursor:default}
+.wolf-feedback{font-weight:bold;margin-top:14px!important}.wolf-feedback.correct{color:#16734c}.wolf-feedback.wrong{color:#a64225}
+@media(max-width:650px){#wolfHud{top:auto;bottom:14px;right:10px;padding:9px 11px;font-size:12px;max-width:170px}.wolf-hotspot{width:49px;height:49px;font-size:25px}}
+
+/* Wolfgarten positioning editor */
+#wolfEditOverlay[hidden],#wolfEditor[hidden]{display:none!important}
+#wolfEditOverlay{position:fixed;inset:0;z-index:950;cursor:crosshair;background:transparent}
+#wolfEditor{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1100;width:min(360px,calc(100vw - 32px));background:#102f48f5;color:white;border:1px solid #ffffff55;border-radius:14px;padding:14px;box-shadow:0 8px 30px #0008;font:14px Arial,sans-serif;display:flex;flex-direction:column;gap:9px}
+#wolfEditor select,#wolfEditor button,.wolfImport{border:1px solid #ffffff77;border-radius:8px;background:#24617c;color:white;padding:9px;font:inherit;cursor:pointer}
+#wolfEditor p{margin:0;line-height:1.4}#wolfEditor label{font-size:13px}
+.wolfImport input{display:none}#wolfEditToggle{background:#24617c;border:1px solid #ffffff77;border-radius:7px;color:white;padding:7px;cursor:pointer}
+.wolf-editing .wolf-hotspot{outline:3px dashed #f9ed9e}
+@media(max-width:650px){#wolfEditor{top:8px;left:8px;transform:none;width:min(300px,calc(100vw - 16px))}}
+
+/* Wolfgarten: Editor blockiert keine Panoramasteuerung */
+#wolfEditOverlay { display:none!important; pointer-events:none!important; }
+
+
+/* Wolfgarten-Infotafeln: offizielle Schulfarben, ohne Marzipano-Transformationen zu überschreiben */
+.wolf-hotspot.wolf-info { background:#24417B; border-color:#CEE697; color:#fff; font-family:Arial,sans-serif; font-weight:700; }
+#wolfModal.wolf-info-open .wolf-dialog {
+  background:#F6F3EB; color:#24417B; width:min(100%,650px);
+  max-height:min(85vh,760px); overflow-y:auto; border-radius:22px;
+  padding:clamp(22px,4vw,38px); border:2px solid #E8EEE3;
+}
+#wolfModal.wolf-info-open #wolfClose { color:#24417B; }
+.wolf-info-eyebrow { color:#83AB2E; font-size:13px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; margin:0 35px 10px 0; }
+#wolfModal .wolf-info-title { color:#24417B; font-size:clamp(27px,4vw,42px); line-height:1.12; font-weight:300; letter-spacing:-.035em; margin:0 28px 20px 0; }
+.wolf-info-image { display:block; width:100%; max-height:280px; object-fit:contain; border-radius:14px; margin:0 0 20px; background:#EEE6D8; }
+#wolfModal .wolf-info-body { color:#43528B; font-size:16px; line-height:1.65; white-space:pre-line; margin:0; overflow-wrap:anywhere; user-select:text; }
+#wolfInfoEditor label { display:block; margin-top:7px; }
+#wolfInfoEditor textarea { resize:vertical; }
+
+/* ==========================================================
+   WOLFGARTEN DESIGN SYSTEM – gesamter VR-Rundgang
+   Ausschließlich Farben und Gestaltung; keine Positions-
+   oder Transformationsregeln für Marzipano-Hotspots.
+   ========================================================== */
+:root {
+  --wolf-blue: #24417B;
+  --wolf-blue-light: #43528B;
+  --wolf-green: #83AB2E;
+  --wolf-green-light: #CEE697;
+  --wolf-warmwhite: #F6F3EB;
+  --wolf-sand: #EEE6D8;
+  --wolf-sage: #E8EEE3;
+  --wolf-dove: #8793BC;
+}
+
+/* Kopfzeile und Raumübersicht */
+#titleBar .sceneName,
+#sceneList .scenes { background-color:rgba(36,65,123,.94); color:var(--wolf-warmwhite); }
+#sceneList .scene.current { background-color:var(--wolf-green); color:var(--wolf-blue); font-weight:700; }
+.no-touch #sceneList .scene:hover { background-color:rgba(131,171,46,.85); color:var(--wolf-blue); }
+#sceneListToggle, #fullscreenToggle, #autorotateToggle,
+.viewControlButton { background-color:rgba(36,65,123,.94); }
+.link-hotspot-tooltip { background-color:rgba(36,65,123,.96); color:var(--wolf-warmwhite); }
+
+/* Bestehende Marzipano-Infopunkte */
+.info-hotspot .info-hotspot-header,
+.info-hotspot-modal .info-hotspot-header { background-color:var(--wolf-blue); }
+.info-hotspot .info-hotspot-text,
+.info-hotspot-modal .info-hotspot-text { background-color:var(--wolf-warmwhite); color:var(--wolf-blue-light); }
+.info-hotspot .info-hotspot-close-wrapper,
+.info-hotspot-modal .info-hotspot-close-wrapper { background-color:var(--wolf-blue-light); }
+
+/* Münzen bleiben goldfarben; Quiz und Info in Schulfarben.
+   Wichtig: kein transform oder transition:transform auf .wolf-hotspot! */
+.wolf-hotspot { background:var(--wolf-blue); border-color:var(--wolf-warmwhite); color:#fff; box-shadow:0 5px 20px rgba(18,29,62,.42); }
+.wolf-hotspot.wolf-quiz { background:var(--wolf-blue); border-color:var(--wolf-green-light); }
+.wolf-hotspot.wolf-info { background:var(--wolf-green); border-color:var(--wolf-warmwhite); color:var(--wolf-blue); }
+.wolf-hotspot.wolf-coin { background:#A77916; border-color:#F6D98B; }
+.wolf-hotspot:hover { filter:brightness(1.12); }
+.wolf-hotspot.completed { opacity:.48; filter:grayscale(.7); }
+.wolf-editing .wolf-hotspot { outline:3px dashed var(--wolf-green-light); }
+
+/* Punkteanzeige */
+#wolfHud { background:rgba(36,65,123,.96); color:var(--wolf-warmwhite); border:1px solid rgba(206,230,151,.6); box-shadow:0 8px 28px rgba(0,0,0,.28); }
+#wolfHud strong { color:#fff; }
+#wolfScore { color:var(--wolf-green-light); font-weight:700; }
+#wolfReset, #wolfEditToggle { background:var(--wolf-green); color:var(--wolf-blue); border:1px solid var(--wolf-green); border-radius:999px; font-weight:700; }
+#wolfReset:hover, #wolfEditToggle:hover { background:var(--wolf-green-light); }
+
+/* Quiz-Dialoge und Infotafeln */
+#wolfModal { background:rgba(17,28,58,.72); }
+#wolfModal .wolf-dialog { background:var(--wolf-warmwhite); color:var(--wolf-blue); border:2px solid var(--wolf-sage); border-radius:22px; box-shadow:0 16px 50px rgba(0,0,0,.35); }
+#wolfModal .wolf-dialog h2 { color:var(--wolf-blue); font-weight:400; letter-spacing:-.025em; }
+#wolfModal #wolfClose { color:var(--wolf-blue); }
+#wolfModal #wolfClose:hover { color:var(--wolf-green); }
+#wolfModal .wolf-answer { background:var(--wolf-sage); color:var(--wolf-blue); border:1px solid var(--wolf-dove); border-radius:12px; }
+#wolfModal .wolf-answer:hover:not(:disabled) { background:var(--wolf-green-light); border-color:var(--wolf-green); }
+/* Die roten/grünen Inline-Farben der bereits beantworteten Quizfragen bleiben erhalten. */
+#wolfModal .wolf-feedback.correct { color:#277343; }
+#wolfModal .wolf-feedback.wrong { color:#A72F2F; }
+
+/* Bearbeitungsmodus inkl. dynamisch erzeugter Formularfelder */
+#wolfEditor { background:rgba(36,65,123,.98); color:var(--wolf-warmwhite); border:1px solid var(--wolf-dove); box-shadow:0 10px 32px rgba(0,0,0,.35); }
+#wolfEditor strong { color:#fff; }
+#wolfEditor select, #wolfEditor button, #wolfEditor .wolfImport { background:var(--wolf-blue-light); color:#fff; border:1px solid var(--wolf-dove); border-radius:10px; }
+#wolfEditor button:hover, #wolfEditor .wolfImport:hover { background:var(--wolf-green); color:var(--wolf-blue); border-color:var(--wolf-green); }
+#wolfEditor input:not([type="file"]), #wolfEditor textarea { accent-color:var(--wolf-green); }
+#wolfEditor #wolfSaveQuestion { background:var(--wolf-green); color:var(--wolf-blue); border-color:var(--wolf-green); font-weight:700; }
+#wolfEditor #wolfSaveQuestion:hover { background:var(--wolf-green-light); }
+#wolfEditor #wolfEditMessage, #wolfEditor #wolfQuestionMessage { line-height:1.5; }
+
+/* Infotafeln: warme, ruhige Homepage-Optik beibehalten */
+#wolfModal.wolf-info-open .wolf-dialog { background:var(--wolf-warmwhite); border-color:var(--wolf-sage); }
+.wolf-info-eyebrow { color:var(--wolf-green); }
+#wolfModal .wolf-info-title { color:var(--wolf-blue); }
+#wolfModal .wolf-info-body { color:var(--wolf-blue-light); }
+.wolf-info-image { background:var(--wolf-sand); }
+
+/* Wolfgarten-Coin: Bild im Hotspot, Marzipano-Positionierung bleibt unberuehrt. */
+.wolf-hotspot.wolf-coin {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  overflow: visible;
+  box-shadow: none;
+}
+.wolf-hotspot.wolf-coin .wolf-coin-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,.4));
+}
+
+
+/* WOLFGARTEN QUIZ – Design 2026 (nur Darstellung) */
+.wolf-hotspot.wolf-quiz {
+  background:#24417B;
+  border:3px solid #83AB2E;
+  color:transparent;
+  font-size:0;
+  width:56px;
+  height:56px;
+  padding:0;
+  border-radius:50%;
+  box-shadow:0 5px 18px rgba(18,29,62,.45);
+}
+.wolf-hotspot.wolf-quiz::after {
+  content:'?';
+  display:grid;
+  place-items:center;
+  width:100%;
+  height:100%;
+  color:#F6F3EB;
+  font:bold 35px/1 Arial,sans-serif;
+  pointer-events:none;
+}
+#wolfModal:not(.wolf-info-open) .wolf-dialog {
+  background:#F6F3EB;
+  color:#24417B;
+  border:2px solid #CEE697;
+  border-radius:22px;
+  width:min(100%,530px);
+  padding:clamp(20px,4vw,32px);
+  max-height:90vh;
+  overflow-y:auto;
+}
+#wolfModal:not(.wolf-info-open) .wolf-dialog h2 {
+  background:#24417B;
+  color:#F6F3EB;
+  border-radius:14px;
+  margin:-4px 30px 18px -4px;
+  padding:18px 20px;
+  font-size:clamp(20px,3vw,25px);
+  font-weight:700;
+  line-height:1.3;
+}
+#wolfModal:not(.wolf-info-open) .wolf-dialog > #wolfModalContent > p:first-of-type {
+  color:#24417B;
+  font-size:19px;
+  font-weight:600;
+  line-height:1.5;
+}
+#wolfModal:not(.wolf-info-open) .wolf-answer {
+  background:#fff;
+  color:#24417B;
+  border:1.5px solid #CEE697;
+  border-radius:12px;
+  padding:14px 16px;
+  font-size:16px;
+  font-weight:600;
+  box-shadow:0 2px 6px rgba(36,65,123,.06);
+}
+#wolfModal:not(.wolf-info-open) .wolf-answer:hover:not(:disabled) {
+  background:#E8EEE3;
+  border-color:#83AB2E;
+}
+#wolfModal:not(.wolf-info-open) .wolf-answer:focus-visible,
+.wolf-hotspot.wolf-quiz:focus-visible {
+  outline:3px solid #83AB2E;
+  outline-offset:3px;
+}
+#wolfModal:not(.wolf-info-open) #wolfClose {
+  color:#24417B;
+  background:#CEE697;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  font-size:27px;
+  line-height:30px;
+  top:12px;
+  right:12px;
+}
+@media(max-width:650px){
+  .wolf-hotspot.wolf-quiz {width:49px;height:49px;}
+  .wolf-hotspot.wolf-quiz::after {font-size:30px;}
+}
+
+/* Hotspots ohne Positionsverzoegerung: Marzipano steuert transform direkt. */
+.wolf-hotspot, .wolf-hotspot:hover, .wolf-hotspot.completed {
+  transition: none !important;
+  -webkit-transition: none !important;
+}
+
+
+/* ================================================================
+   WOLFGARTEN 2026 – CREME / SAND / WARMWEISS
+   Ausschliesslich die Originalfarben der Schulhomepage.
+   Diese Regeln stehen absichtlich am Ende und ersetzen die
+   vorherigen dunklen Marzipano- und Wolfgarten-Farben.
+   Keine Transformations- oder Hotspot-Positionsaenderungen.
+   ================================================================ */
+:root {
+  --school-blue: #24417B;
+  --school-blue-light: #43528B;
+  --school-green: #83AB2E;
+  --school-green-light: #CEE697;
+  --school-green-pale: #E7FFB1;
+  --school-neutral: #F2E6CA;
+  --school-warmwhite: #F6F3EB;
+  --school-sand: #EEE6D8;
+  --school-sage: #E8EEE3;
+  --school-white: #FFFFFF;
+  --school-blue-dove: #8793BC;
+}
+html, body { background-color:var(--school-warmwhite); color:var(--school-blue); }
+/* Kopfzeile und Quicklinks */
+#titleBar .sceneName {
+  background:var(--school-neutral); color:var(--school-blue);
+  font-weight:600; border-bottom:1px solid var(--school-sand);
+}
+#sceneList, #sceneList .scenes {
+  background:var(--school-neutral); color:var(--school-blue);
+}
+#sceneList .scene { color:var(--school-blue); }
+#sceneList .scene.current {
+  background:var(--school-sage); color:var(--school-blue); font-weight:700;
+}
+.no-touch #sceneList .scene:hover {
+  background:var(--school-sand); color:var(--school-blue);
+}
+#sceneListToggle, #fullscreenToggle, #autorotateToggle, .viewControlButton {
+  background:var(--school-neutral);
+  color:var(--school-blue);
+}
+/* Marzipano liefert teils weisse Bild-Icons: sichtbar halten */
+#sceneListToggle .icon, #fullscreenToggle .icon, .viewControlButton .icon {
+  filter:brightness(0) saturate(100%) invert(22%) sepia(30%) saturate(1450%) hue-rotate(184deg);
+}
+.link-hotspot-tooltip {
+  background:var(--school-neutral); color:var(--school-blue);
+  border:1px solid var(--school-sand);
+}
+/* Originale Marzipano-Infopunkte */
+.info-hotspot .info-hotspot-header,
+.info-hotspot-modal .info-hotspot-header {
+  background:var(--school-neutral); color:var(--school-blue);
+}
+.info-hotspot .info-hotspot-title,
+.info-hotspot-modal .info-hotspot-title { color:var(--school-blue); }
+.info-hotspot .info-hotspot-text,
+.info-hotspot-modal .info-hotspot-text {
+  background:var(--school-warmwhite); color:var(--school-blue-light);
+}
+.info-hotspot .info-hotspot-close-wrapper,
+.info-hotspot-modal .info-hotspot-close-wrapper {
+  background:var(--school-sand);
+}
+/* Wolfgarten: Fragen, Infos und Coins */
+.wolf-hotspot.wolf-quiz {
+  background:var(--school-sage); border:3px solid var(--school-neutral);
+  color:transparent; box-shadow:0 4px 15px #24417B33;
+}
+.wolf-hotspot.wolf-quiz::after { color:var(--school-blue); }
+.wolf-hotspot.wolf-info {
+  background:var(--school-neutral); border:3px solid var(--school-sand);
+  color:var(--school-blue); box-shadow:0 4px 15px #24417B33;
+}
+.wolf-hotspot.wolf-coin {
+  background:transparent; border:0; box-shadow:none;
+}
+.wolf-editing .wolf-hotspot { outline:3px dashed var(--school-blue-dove); }
+.wolf-hotspot:hover { filter:brightness(1.04); }
+.wolf-hotspot.completed { opacity:.48; filter:grayscale(.7); }
+/* Punkteanzeige */
+#wolfHud {
+  background:var(--school-neutral); color:var(--school-blue);
+  border:1px solid var(--school-sand);
+  box-shadow:0 8px 28px #24417B33;
+}
+#wolfHud strong, #wolfScore, #wolfProgress { color:var(--school-blue); }
+#wolfReset, #wolfEditToggle {
+  background:var(--school-sand); color:var(--school-blue);
+  border:1px solid var(--school-blue-dove); border-radius:999px;
+}
+#wolfReset:hover, #wolfEditToggle:hover {
+  background:var(--school-sage); color:var(--school-blue);
+}
+/* Alle Dialoge: Quiz, Coin-Fund und Infotafeln */
+#wolfModal { background:#24417B99; }
+#wolfModal .wolf-dialog,
+#wolfModal.wolf-info-open .wolf-dialog,
+#wolfModal:not(.wolf-info-open) .wolf-dialog {
+  background:var(--school-warmwhite); color:var(--school-blue);
+  border:2px solid var(--school-neutral);
+  box-shadow:0 16px 50px #24417B55;
+}
+#wolfModal .wolf-dialog h2,
+#wolfModal:not(.wolf-info-open) .wolf-dialog h2 {
+  background:var(--school-neutral); color:var(--school-blue);
+}
+#wolfModal .wolf-dialog > #wolfModalContent > p:first-of-type,
+#wolfModal:not(.wolf-info-open) .wolf-dialog > #wolfModalContent > p:first-of-type {
+  color:var(--school-blue);
+}
+#wolfModal #wolfClose,
+#wolfModal:not(.wolf-info-open) #wolfClose {
+  background:var(--school-sand); color:var(--school-blue);
+}
+#wolfModal #wolfClose:hover { background:var(--school-sage); color:var(--school-blue); }
+#wolfModal .wolf-answer,
+#wolfModal:not(.wolf-info-open) .wolf-answer {
+  background:var(--school-white); color:var(--school-blue);
+  border:1.5px solid var(--school-neutral); box-shadow:none;
+}
+#wolfModal .wolf-answer:hover:not(:disabled),
+#wolfModal:not(.wolf-info-open) .wolf-answer:hover:not(:disabled) {
+  background:var(--school-sage); border-color:var(--school-blue-dove);
+}
+#wolfModal .wolf-answer:focus-visible,
+.wolf-hotspot.wolf-quiz:focus-visible {
+  outline:3px solid var(--school-blue-dove);
+}
+#wolfModal .wolf-feedback.correct { color:var(--school-blue); }
+#wolfModal .wolf-feedback.wrong { color:var(--school-blue-light); }
+/* Infotafeln */
+.wolf-info-eyebrow { color:var(--school-blue-dove); }
+#wolfModal .wolf-info-title { color:var(--school-blue); }
+#wolfModal .wolf-info-body { color:var(--school-blue-light); }
+.wolf-info-image { background:var(--school-sand); }
+/* Editor und seine dynamisch erzeugten Formulare */
+#wolfEditor {
+  background:var(--school-warmwhite); color:var(--school-blue);
+  border:1px solid var(--school-neutral);
+  box-shadow:0 10px 32px #24417B44;
+}
+#wolfEditor strong, #wolfEditor label { color:var(--school-blue); }
+#wolfEditor select, #wolfEditor button, #wolfEditor .wolfImport,
+#wolfEditor #wolfSaveQuestion {
+  background:var(--school-neutral); color:var(--school-blue);
+  border:1px solid var(--school-blue-dove);
+}
+#wolfEditor button:hover, #wolfEditor .wolfImport:hover,
+#wolfEditor #wolfSaveQuestion:hover {
+  background:var(--school-sage); color:var(--school-blue);
+  border-color:var(--school-blue-dove);
+}
+#wolfEditor input:not([type="file"]),
+#wolfEditor textarea, #wolfEditor select {
+  background:var(--school-white) !important;
+  color:var(--school-blue) !important;
+  border:1px solid var(--school-blue-dove) !important;
+  accent-color:var(--school-blue-dove);
+}
+#wolfEditor input::placeholder, #wolfEditor textarea::placeholder {
+  color:var(--school-blue-light);
+}
+#wolfEditMessage, #wolfQuestionMessage, #wolfInfoMessage { color:var(--school-blue); }
+/* Hotspot-Positionen bleiben unveraendert. */
+
+/* WOLFGARTEN – INFOTAFELN SALBEIGRÜN */
+
+.wolf-hotspot.wolf-info {
+  background: #E8EEE3 !important;
+  border: 3px solid #CEE697 !important;
+  color: #24417B !important;
+}
+
+.wolf-hotspot.wolf-info:hover {
+  background: #CEE697 !important;
+}
+
+#wolfModal.wolf-info-open .wolf-dialog {
+  background: #E8EEE3 !important;
+  border: 2px solid #CEE697 !important;
+  color: #24417B !important;
+}
+
+#wolfModal.wolf-info-open .wolf-info-eyebrow {
+  color: #43528B !important;
+}
+
+
+/* WOLFGARTEN – PUNKTESTAND */
+
+#wolfHud {
+  background: #F2E6CA !important;
+  color: #24417B !important;
+  border: 2px solid #EEE6D8 !important;
+  border-radius: 18px !important;
+  padding: 14px 18px !important;
+  box-shadow: 0 5px 22px rgba(36,65,123,.16) !important;
+  min-width: 190px;
+}
+
+#wolfHud strong,
+#wolfScore {
+  color: #24417B !important;
+}
+
+#wolfScore {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+#wolfProgress {
+  color: #43528B;
+  font-size: 12px;
+}
+
+#wolfProgressTrack {
+  height: 8px;
+  background: #EEE6D8;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 6px 0;
+}
+
+#wolfProgressBar {
+  width: 0%;
+  height: 100%;
+  background: #83AB2E;
+  border-radius: 20px;
+  transition: width .3s ease;
+}
+
+#wolfReset {
+  background: #EEE6D8 !important;
+  color: #24417B !important;
+  border: 1px solid #8793BC !important;
+}
+
+/* =====================================================
+   WOLFGARTEN – EINHEITLICHES SCHULDESIGN
+   Beige | Schulblau | Gruene Akzente
+   ===================================================== */
+
+:root {
+  --wg-beige: #F2E6CA;
+  --wg-blue: #24417B;
+  --wg-green: #83AB2E;
+  --wg-lightgreen: #CEE697;
+  --wg-warmwhite: #F6F3EB;
+  --wg-sand: #EEE6D8;
+}
+
+/* Allgemeine Oberflaechen */
+
+html, body {
+  color: var(--wg-blue);
+  background-color: var(--wg-beige);
+}
+
+/* Kopfzeile */
+
+#titleBar .sceneName {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border-bottom: 3px solid var(--wg-green);
+  font-weight: 600;
+}
+
+/* Raumliste und Navigation */
+
+#sceneList,
+#sceneList .scenes {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+}
+
+#sceneList .scene,
+#sceneList .scene .text {
+  color: var(--wg-blue) !important;
+}
+
+#sceneList .scene.current,
+.no-touch #sceneList .scene:hover {
+  background: var(--wg-lightgreen) !important;
+  color: var(--wg-blue) !important;
+}
+
+#sceneList .scene.current {
+  border-left: 4px solid var(--wg-green);
+  font-weight: 700;
+}
+
+#sceneListToggle,
+#fullscreenToggle,
+#autorotateToggle,
+.viewControlButton {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+}
+
+.link-hotspot-tooltip {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border: 2px solid var(--wg-green);
+}
+
+/* INFO-PUNKTE AUSSEN IM PANORAMA */
+
+.wolf-hotspot.wolf-info {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border: 3px solid var(--wg-green) !important;
+  box-shadow: 0 4px 16px rgba(36,65,123,.22);
+  font-weight: 800;
+}
+
+.wolf-hotspot.wolf-info:hover {
+  background: var(--wg-lightgreen) !important;
+}
+
+/* QUIZ-PUNKTE AUSSEN */
+
+.wolf-hotspot.wolf-quiz {
+  background: var(--wg-beige) !important;
+  border: 3px solid var(--wg-green) !important;
+  box-shadow: 0 4px 16px rgba(36,65,123,.22);
+}
+
+.wolf-hotspot.wolf-quiz::after {
+  color: var(--wg-blue) !important;
+}
+
+.wolf-hotspot.wolf-quiz:hover {
+  background: var(--wg-lightgreen) !important;
+}
+
+/* GEÖFFNETE INFOTAFEL UND QUIZ */
+
+#wolfModal .wolf-dialog,
+#wolfModal.wolf-info-open .wolf-dialog,
+#wolfModal:not(.wolf-info-open) .wolf-dialog {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border: 2px solid var(--wg-green) !important;
+  border-radius: 20px;
+  box-shadow: 0 16px 48px rgba(36,65,123,.28);
+}
+
+/* Ueberschriften */
+
+#wolfModal .wolf-dialog h2,
+#wolfModal .wolf-info-title,
+#wolfModal:not(.wolf-info-open) .wolf-dialog h2 {
+  background: transparent !important;
+  color: var(--wg-blue) !important;
+  font-weight: 600;
+  border-radius: 0;
+  border-bottom: 3px solid var(--wg-green);
+  padding: 0 0 14px;
+  margin: 0 35px 20px 0;
+  line-height: 1.2;
+}
+
+/* Kleine gruene Ueberschrift */
+
+#wolfModal .wolf-info-eyebrow {
+  color: var(--wg-green) !important;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+/* Infotexte */
+
+#wolfModal .wolf-info-body,
+#wolfModal .wolf-dialog p {
+  color: var(--wg-blue) !important;
+  line-height: 1.65;
+}
+
+/* Bilder auf Infotafeln */
+
+.wolf-info-image {
+  background: var(--wg-warmwhite) !important;
+  border: 2px solid var(--wg-sand);
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+/* Quiz-Antworten */
+
+#wolfModal .wolf-answer,
+#wolfModal:not(.wolf-info-open) .wolf-answer {
+  background: var(--wg-warmwhite);
+  color: var(--wg-blue);
+  border: 2px solid var(--wg-sand);
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+#wolfModal .wolf-answer:hover:not(:disabled) {
+  background: var(--wg-lightgreen) !important;
+  border-color: var(--wg-green) !important;
+}
+
+/* Schliessen-Button */
+
+#wolfModal #wolfClose,
+#wolfModal:not(.wolf-info-open) #wolfClose {
+  background: var(--wg-lightgreen) !important;
+  color: var(--wg-blue) !important;
+  border-radius: 50%;
+}
+
+#wolfModal #wolfClose:hover {
+  background: var(--wg-green) !important;
+}
+
+/* PUNKTESTAND */
+
+#wolfHud {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border: 2px solid var(--wg-green) !important;
+  border-radius: 18px;
+}
+
+#wolfHud strong,
+#wolfScore,
+#wolfProgress {
+  color: var(--wg-blue) !important;
+}
+
+#wolfScore {
+  font-weight: 800;
+}
+
+#wolfProgressTrack {
+  background: var(--wg-sand);
+}
+
+#wolfProgressBar {
+  background: var(--wg-green);
+}
+
+#wolfReset,
+#wolfEditToggle {
+  background: var(--wg-lightgreen) !important;
+  color: var(--wg-blue) !important;
+  border: 1px solid var(--wg-green) !important;
+  font-weight: 700;
+}
+
+#wolfReset:hover,
+#wolfEditToggle:hover {
+  background: var(--wg-green) !important;
+}
+
+/* BEARBEITUNGSMODUS */
+
+#wolfEditor {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border: 2px solid var(--wg-green) !important;
+}
+
+#wolfEditor strong,
+#wolfEditor label,
+#wolfEditor p {
+  color: var(--wg-blue) !important;
+}
+
+#wolfEditor button,
+#wolfEditor select,
+#wolfEditor .wolfImport {
+  background: var(--wg-lightgreen) !important;
+  color: var(--wg-blue) !important;
+  border: 1px solid var(--wg-green) !important;
+}
+
+#wolfEditor input:not([type="file"]),
+#wolfEditor textarea {
+  background: var(--wg-warmwhite) !important;
+  color: var(--wg-blue) !important;
+  border: 1px solid var(--wg-green) !important;
+}
+
+/* Standard-Marzipano-Infotafeln */
+
+.info-hotspot .info-hotspot-header,
+.info-hotspot-modal .info-hotspot-header {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+}
+
+.info-hotspot .info-hotspot-title,
+.info-hotspot-modal .info-hotspot-title {
+  color: var(--wg-blue) !important;
+}
+
+.info-hotspot .info-hotspot-text,
+.info-hotspot-modal .info-hotspot-text {
+  background: var(--wg-beige) !important;
+  color: var(--wg-blue) !important;
+  border-bottom: 3px solid var(--wg-green);
+}
+
+.info-hotspot .info-hotspot-close-wrapper,
+.info-hotspot-modal .info-hotspot-close-wrapper {
+  background: var(--wg-lightgreen) !important;
+}
+
+/* Wichtig:
+   Keine Transformationen oder Positionen veraendern.
+   Die Coin-Grafiken bleiben unveraendert.
+*/
+
+
+
+/* =========================================
+   WOLFGARTEN – FLIEGENDE +5 PUNKTE
+   ========================================= */
+
+.wolf-flying-points {
+  position: fixed;
+  z-index: 99999;
+  pointer-events: none;
+
+  color: #83AB2E;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(42px, 6vw, 66px);
+  font-weight: 900;
+  line-height: 1;
+
+  -webkit-text-stroke: 1.5px #24417B;
+
+  filter: drop-shadow(0 4px 2px #F2E6CA);
+
+  transform: translate(-50%, -50%);
+  animation: wolfPointsFly 1.3s ease-out forwards;
+}
+
+@keyframes wolfPointsFly {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30%) scale(.35);
+  }
+
+  18% {
+    opacity: 1;
+    transform: translate(-50%, -75%) scale(1.35);
+  }
+
+  38% {
+    opacity: 1;
+    transform: translate(-50%, -110%) scale(1);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(-50%, -180%) scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -250%) scale(.8);
+  }
+}
+
+
+/* Wolfgarten: Punkteanzeige direkt neben Vollbild */
+#wolfHud {
+  right: 47px !important;
+}
+
+@media (max-width: 600px) {
+  #wolfHud {
+    right: 43px !important;
+  }
+}

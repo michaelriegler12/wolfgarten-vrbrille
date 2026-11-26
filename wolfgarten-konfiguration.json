@@ -1,0 +1,673 @@
+{
+  "version": 2,
+  "positions": {
+    "0": {
+      "yaw": 0.839252091452213,
+      "pitch": 0.2635950465576098
+    },
+    "1": {
+      "yaw": -2.3590548047066306,
+      "pitch": 0.03677180726883833
+    },
+    "2": {
+      "yaw": -0.08181141889557608,
+      "pitch": 0.44997634274908194
+    },
+    "3": {
+      "yaw": 0.040627199699340366,
+      "pitch": 0.45763535174964076
+    },
+    "4": {
+      "yaw": 2.166708088152088,
+      "pitch": -0.3280076606006279
+    },
+    "5": {
+      "yaw": 0.5082493942025046,
+      "pitch": 0.03416979327967162
+    },
+    "6": {
+      "yaw": -0.029099718722703116,
+      "pitch": 0.06583447053786884
+    },
+    "7": {
+      "yaw": 3.103207325023379,
+      "pitch": 0.3160479946953707
+    },
+    "8": {
+      "yaw": 0.24996260475703025,
+      "pitch": -0.11192567067518056
+    },
+    "9": {
+      "yaw": 0.9402408201184365,
+      "pitch": 0.08626713100222361
+    },
+    "10": {
+      "yaw": -1.351388854824517,
+      "pitch": -0.27597886815365413
+    },
+    "11": {
+      "yaw": 0.6871570091882084,
+      "pitch": -0.07681792352569339
+    },
+    "12": {
+      "yaw": -0.7474279674667379,
+      "pitch": -0.07951391862480861
+    },
+    "13": {
+      "yaw": 0.23219189340431257,
+      "pitch": -0.09536044897590301
+    },
+    "15": {
+      "yaw": -2.7042112030967687,
+      "pitch": 0.23743044240552358
+    },
+    "16": {
+      "yaw": -2.1929338635285944,
+      "pitch": 0.09817150489675441
+    },
+    "17": {
+      "yaw": -0.13958264678992194,
+      "pitch": -0.08047329333385278
+    },
+    "18": {
+      "yaw": 3.088791539520879,
+      "pitch": 0.5571036604990205
+    },
+    "20": {
+      "yaw": -3.016135482023236,
+      "pitch": 0.018777730398102932
+    },
+    "21": {
+      "yaw": -1.1974830031519588,
+      "pitch": -0.13877969515859512
+    },
+    "22": {
+      "yaw": 0.33423872630973506,
+      "pitch": 0.09924570866795435
+    },
+    "23": {
+      "yaw": 0.13616438009719012,
+      "pitch": -0.15346286942330423
+    },
+    "24": {
+      "yaw": 0.5584544900393045,
+      "pitch": -0.03728728129408054
+    },
+    "25": {
+      "yaw": 0.17555772827385852,
+      "pitch": 0.16497263895757897
+    },
+    "26": {
+      "yaw": -0.5019435301548398,
+      "pitch": 0.13167185704078044
+    },
+    "27": {
+      "yaw": -2.1460418640673673,
+      "pitch": 0.11421281777942127
+    },
+    "28": {
+      "yaw": -1.9041811562145767,
+      "pitch": -0.13183421692699682
+    },
+    "29": {
+      "yaw": -0.4731616726467873,
+      "pitch": -0.26131218011874324
+    },
+    "30": {
+      "yaw": -0.6498203887929215,
+      "pitch": -0.028107733353099462
+    },
+    "31": {
+      "yaw": 1.2134518404908672,
+      "pitch": 0.22208818078510362
+    },
+    "32": {
+      "yaw": 2.9717132126044614,
+      "pitch": -0.01199170326124488
+    },
+    "33": {
+      "yaw": -1.8018096035651663,
+      "pitch": -0.4610706849123076
+    },
+    "34": {
+      "yaw": -2.4958554840399447,
+      "pitch": -0.2915348504733508
+    },
+    "35": {
+      "yaw": -0.4654824441372192,
+      "pitch": -0.13218054990493044
+    },
+    "36": {
+      "yaw": -0.031245582666818095,
+      "pitch": 0.050234487774936554
+    },
+    "37": {
+      "yaw": 1.950197306904193,
+      "pitch": 0.06185031631468796
+    },
+    "39": {
+      "yaw": -1.4059745873067087,
+      "pitch": -0.09012457673030205
+    },
+    "40": {
+      "yaw": -1.9671969576267454,
+      "pitch": 0.0140463014597767
+    },
+    "41": {
+      "yaw": -3.0036677446916613,
+      "pitch": -0.02669192161070022
+    },
+    "42": {
+      "yaw": 2.122036791332212,
+      "pitch": -0.5617843930498303
+    }
+  },
+  "questions": {
+    "35": {
+      "question": "Wie viele Saiten hat eine normale Gitarre?",
+      "answers": [
+        "4 Saiten",
+        "6 Saiten",
+        "8 Saiten"
+      ],
+      "correct": 1,
+      "points": 10
+    },
+    "36": {
+      "question": "Welche Farben gehören zu den drei Grundfarben?",
+      "answers": [
+        "Rot, Gelb und Blau",
+        "Grün, Orange und Lila",
+        "Schwarz, Weiß und Grau"
+      ],
+      "correct": 0,
+      "points": 10
+    },
+    "37": {
+      "question": "Was verliert Aschenputtel auf dem Weg vom Ball?",
+      "answers": [
+        "Eine goldene Krone",
+        "Einen Schuh",
+        "Eine Halskette"
+      ],
+      "correct": 1,
+      "points": 10
+    },
+    "38": {
+      "question": "Was entsteht, wenn Wasser gefriert?",
+      "answers": [
+        "Wasserdampf",
+        "Eis",
+        "Salz"
+      ],
+      "correct": 1,
+      "points": 10
+    },
+    "39": {
+      "question": "In welcher Sportart wurde Marcel Hirscher achtmal hintereinander Gesamtweltcupsieger?",
+      "answers": [
+        "Skispringen",
+        "Eishockey",
+        "Skifahren"
+      ],
+      "correct": 2,
+      "points": 10
+    },
+    "40": {
+      "question": "Warum können Astronauten auf dem Mond viel höher springen als auf der Erde?",
+      "answers": [
+        "Weil ihre Raumanzüge ihnen beim Springen helfen.",
+        "Weil es auf dem Mond keine Luft gibt.",
+        "Weil die Schwerkraft auf dem Mond geringer ist."
+      ],
+      "correct": 2,
+      "points": 10
+    },
+    "41": {
+      "question": "Welches englische Wort heißt übersetzt \"müde\"?",
+      "answers": [
+        "hungry",
+        "tired",
+        "excited"
+      ],
+      "correct": 1,
+      "points": 10
+    }
+  },
+  "extraTasks": [
+    {
+      "scene": "33-haupteingang",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "GYMNASIUM WOLFGARTEN",
+      "title": "Wolfgarten entdecken",
+      "text": "Komm mit auf einen Rundgang durch unsere Schule. Entdecke unsere Wurzeln, erfahre, was den Wolfgarten ausmacht, und finde heraus, welcher unserer drei Zweige zu dir passen könnte.",
+      "image": ""
+    },
+    {
+      "scene": "11-erdgeschoss_gangedv",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Wachsen",
+      "title": "Persönlichkeit · Bildung · Gemeinschaft",
+      "text": "Wir möchten junge Menschen dabei begleiten, ihre Stärken zu entdecken, Verantwortung zu übernehmen und als Persönlichkeit zu wachsen.",
+      "image": ""
+    },
+    {
+      "scene": "23-sekretariat1",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Kontakt",
+      "title": "Wir sind für Sie da.",
+      "text": "Sie haben Fragen zu unserer Schule, zur Aufnahme, zum Unterricht oder zum Tagesheim? Kontaktieren Sie uns gerne. Wir helfen Ihnen weiter und freuen uns auf ein persönliches Gespräch.",
+      "image": ""
+    },
+    {
+      "scene": "32-direktionneu",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Drei Zweige.",
+      "title": "Ein gemeinsamer Stamm.",
+      "text": "Du musst noch kein Profi sein.\nDu brauchst weder sportliche Höchstleistungen noch künstlerisches Talent oder wissenschaftliches Vorwissen. Du musst noch nicht alles können oder wissen, worin du besonders gut bist. Was zählt, sind deine Neugier, deine Begeisterung und die Freude daran, Neues auszuprobieren.\n\nDrei Wege. Deine Entscheidung.\n\nGYM Kreativ - GYM Sport - GYM Science",
+      "image": ""
+    },
+    {
+      "scene": "32-direktionneu",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "8-bibliothek2",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "7-bibliothek",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Unsere Bibliothek",
+      "title": "Eine Welt voller Geschichten",
+      "text": "Ob spannende Abenteuer, fantastische Welten oder interessantes Sachwissen – in unserer Schulbibliothek gibt es viel zu entdecken!\n\nHier kannst du in Ruhe schmökern, Neues lernen oder einfach einmal dem Schulalltag entfliehen. Unsere Bibliothek ist ein Ort zum Lesen, Entdecken und Entspannen.\n\nNeugierig geworden? Dann stöbere durch unsere Bücher und finde deine nächste Lieblingsgeschichte!",
+      "image": ""
+    },
+    {
+      "scene": "21-physiksaal1",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Gym Science.",
+      "title": "Die Welt verstehen. Selbst Antworten finden.",
+      "text": "Warum ist das so? Wie funktioniert das? Und was passiert, wenn man etwas ganz anders ausprobiert? Im GYM Science beginnt Lernen mit der Neugier und dem Wunsch, die Welt besser zu verstehen.\n\nHier geht es nicht nur darum, fertige Antworten kennenzulernen. Du stellst eigene Fragen, entwickelst Ideen, überprüfst Vermutungen und findest heraus, wie spannend Wissenschaft sein kann.\n\nIm zusätzlichen Fach Forschen und Experimentieren erhältst du die Möglichkeit, naturwissenschaftliche Themen selbstständig und praktisch zu entdecken.",
+      "image": ""
+    },
+    {
+      "scene": "21-physiksaal1",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "22-religionsraum1",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Christliche Werte",
+      "title": "Glaube · Verantwortung · Solidarität",
+      "text": "Als katholische Privatschule verbinden wir Glaube, Kultur und Leben und fördern Solidarität und ein achtsames Miteinander.",
+      "image": ""
+    },
+    {
+      "scene": "19-musiksaal",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Gym Kreativ",
+      "title": "Aus vielen Talenten wird ein Ensemble.",
+      "text": "Ein Musical lebt von vielen unterschiedlichen Fähigkeiten. Ob Singen, Tanzen, Instrumentalspiel oder szenisches Arbeiten mit Text und Sprache – jedes Kind kann seine Stärken einbringen.\n\nAuch hinter den Kulissen gibt es viel zu entdecken: Bühnenbilder gestalten, Kostüme entwerfen und gemeinsam kreative Lösungen entwickeln.\n\nDabei entstehen nicht nur Aufführungen, sondern auch Selbstvertrauen, Zusammenhalt und die Freude daran, gemeinsam etwas Besonderes auf die Beine zu stellen.",
+      "image": ""
+    },
+    {
+      "scene": "19-musiksaal",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "30-zeichensaal",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "GYM Kreativ",
+      "title": "Talente entdecken. Ideen verwirklichen.",
+      "text": "Im GYM Kreativ stehen Fantasie, künstlerischer Ausdruck und gemeinsames Gestalten im Mittelpunkt. Hier kannst du deine Interessen entdecken, neue Fähigkeiten entwickeln und deine eigenen Ideen verwirklichen.\n\nOb Musik, Musical oder bildende Kunst – du lernst unterschiedliche Ausdrucksmöglichkeiten kennen und findest heraus, was in dir steckt.\n\nBesonders wichtig sind uns Kreativität und Teamwork. Durch projektorientiertes Arbeiten in Klein- und Großgruppen entwickeln wir gemeinsam unsere Fähigkeiten weiter und erleben, was wir gemeinsam erreichen können.",
+      "image": ""
+    },
+    {
+      "scene": "30-zeichensaal",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "26-sprachenraum",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Fremdsprachen",
+      "title": "Die Welt entdecken",
+      "text": "Sprachen öffnen Türen zu neuen Ländern, Kulturen und Menschen! Am Gymnasium Wolfgarten kannst du Englisch, Latein, Französisch, Italienisch und Kroatisch lernen.\n\nDabei geht es um mehr als nur Vokabeln und Grammatik: Du entdeckst andere Lebensweisen, lernst neue Perspektiven kennen und entwickelst die Fähigkeit, dich über Grenzen hinweg zu verständigen.\n\nDenn wer Sprachen spricht, dem steht die Welt offen!",
+      "image": ""
+    },
+    {
+      "scene": "26-sprachenraum",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "3-3stockgang",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "10-chemiesaal",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Forschen",
+      "title": "Ideen entwickeln. Zusammenhänge erkennen.",
+      "text": "Forschen bedeutet, eigene Vermutungen aufzustellen, Informationen zu sammeln, verschiedene Möglichkeiten zu prüfen und aus den Ergebnissen neue Erkenntnisse zu gewinnen.\n\nDabei lernst du, selbstständig zu arbeiten, kritisch zu denken und deine Ideen verständlich zu präsentieren.\n\nBesonders spannend wird es in unseren fächerübergreifenden Projektwochen. Hier werden unterschiedliche Unterrichtsfächer miteinander verbunden und Fragestellungen aus mehreren Blickwinkeln betrachtet.",
+      "image": ""
+    },
+    {
+      "scene": "24-speisesaal1",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Mittagessen",
+      "title": "Gemeinsam essen – gemeinsam genießen",
+      "text": "Beim gemeinsamen Mittagessen im Gymnasium Wolfgarten geht es um mehr als nur eine warme Mahlzeit. Hier kommen unsere Schülerinnen und Schüler zusammen, tauschen sich aus, lachen und stärken sich für den restlichen Schultag.\n\nMit täglich frischer Suppe, Hauptspeise und Nachspeise sorgen wir für eine abwechslungsreiche Mittagspause.\n\nDenn gemeinsam schmeckt’s einfach besser!",
+      "image": ""
+    },
+    {
+      "scene": "9-buffet",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Unser Schulbuffet",
+      "title": "Frisch gestärkt durch den Tag",
+      "text": "Jeden Tag in der großen Pause versorgt uns die Bäckerei Altdorfer mit frischen Köstlichkeiten. Ob für den kleinen Hunger zwischendurch oder eine stärkende Jause – hier ist für jeden Geschmack etwas dabei!\n\nUnser Schulbuffet ist außerdem ein beliebter Treffpunkt, um gemeinsam zu plaudern und neue Energie für die nächsten Unterrichtsstunden zu tanken.\n\nFrisch, lecker und direkt bei uns in der Schule!",
+      "image": ""
+    },
+    {
+      "scene": "9-buffet",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "27-tischfussball",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Freizeit im Tagesheim",
+      "title": "Spiel, Spaß und Bewegung",
+      "text": "Nach dem Unterricht ist bei uns noch lange nicht Schluss! Im Tagesheim gibt es zahlreiche Möglichkeiten, die Freizeit abwechslungsreich und aktiv zu gestalten.\n\nOb spannende Duelle beim Tischfußball und Tischtennis, gemeinsames Spielen im Schulgarten, Bewegung auf dem Sportplatz oder Austoben im Turnsaal – hier ist für alle etwas dabei!\n\nDenn im Tagesheim gehören Lernen, Spielen und Gemeinschaft einfach zusammen!",
+      "image": ""
+    },
+    {
+      "scene": "4-aufenthaltsraum",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Aufenthaltsraum & Lernwaben",
+      "title": "Zeit zum Entspannen",
+      "text": "Manchmal braucht es einfach eine kleine Auszeit! In unserem Tagesheim bieten der gemütliche Aufenthaltsraum und die Lernwaben genügend Platz zum Entspannen, Spielen und Zurückziehen.\n\nOb eine Runde Brettspiele mit Freunden, ein spannendes Buch oder einfach gemütliches Chillen auf unseren Sitzsäcken und Couches – hier kann jeder seine Freizeit so gestalten, wie er möchte.\n\nDenn neben Lernen und Bewegung braucht es auch Zeit für Ruhe und Erholung!",
+      "image": ""
+    },
+    {
+      "scene": "17-lernwaben1",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "6-aueneingang",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Eine Lage zum Wohlfühlen",
+      "title": "Grün · Ruhig · Mittendrin",
+      "text": "Die Schule Wolfgarten begeistert mit ihrer besonderen Lage in Eisenstadt. Umgeben von viel Grün bietet sie eine ruhige und angenehme Atmosphäre, in der Lernen leichtfällt. Zwischen Unterricht und Schulalltag gibt es immer wieder Raum für eine kleine Auszeit – zum Durchatmen, Entspannen und neue Energie tanken.",
+      "image": ""
+    },
+    {
+      "scene": "29-turnsaal",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "GYM Sport",
+      "title": "Hier wird Bewegung zum Teil des Schulalltags.",
+      "text": "GYM SPORT verbindet eine vielseitige sportliche Ausbildung mit der gezielten Förderung deiner Interessen und Stärken. Fünf Sportstunden pro Woche bieten Raum, unterschiedliche Sportarten kennenzulernen und dich weiterzuentwickeln.\n\nDrei Stunden allgemeine Sportausbildung werden durch zwei Stunden mit individueller Schwerpunktsetzung ergänzt. Du entscheidest dich zwischen Fußball und Multisport.\n\nBeide Schwerpunkte stehen Mädchen und Burschen gleichermaßen offen.",
+      "image": ""
+    },
+    {
+      "scene": "25-sportplatz",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "GYM Sport",
+      "title": "Sport erleben. Gemeinsam wachsen.",
+      "text": "Sport verbindet. Bei gemeinsamen Aktivitäten, sportlichen Herausforderungen und Wettkämpfen entstehen Freundschaften, Zusammenhalt und unvergessliche Erlebnisse.\n\nDabei geht es nicht nur um Ergebnisse, sondern auch um Fairness, gegenseitige Unterstützung und die Freude daran, gemeinsam etwas zu erreichen.",
+      "image": ""
+    },
+    {
+      "scene": "20-outdoorklasse",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Unsere Outdoor-Klasse",
+      "title": "Lernen unter freiem Himmel",
+      "text": "Wer sagt eigentlich, dass Unterricht immer im Klassenzimmer stattfinden muss?\n\nIn unserer Outdoor-Klasse verlegen wir den Unterricht einfach nach draußen! Hier kannst du an der frischen Luft lernen, gemeinsam mit deinen Mitschülerinnen und Mitschülern arbeiten und die Natur genießen.\n\nOb spannende Aufgaben, kreative Ideen oder gemeinsames Entdecken – draußen macht das Lernen gleich noch mehr Spaß!\n\nDenn manchmal ist die Natur das schönste Klassenzimmer!",
+      "image": ""
+    },
+    {
+      "scene": "18-mausoleum",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "Geschichte",
+      "title": "Jüdische Wurzeln · Erinnerung · Verantwortung",
+      "text": "Der Wolfgarten hat jüdische Wurzeln. Das heutige Schulareal war einst der Obst- und Gemüsegarten der jüdischen Familie Wolf. Ihre Geschichte gehört zu unserer Schule und erinnert uns an die Verantwortung, die wir tragen: offen, respektvoll und achtsam mit allen Menschen umzugehen.",
+      "image": ""
+    },
+    {
+      "scene": "20-outdoorklasse",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "33-haupteingang",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "36-werksaal",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "36-werksaal",
+      "type": "info",
+      "offset": 0,
+      "pitch": 0,
+      "points": 0,
+      "eyebrow": "GYM Kreativ",
+      "title": "Experimentieren. Gestalten. Entdecken.",
+      "text": "Tauche ein in die Welt der Kunst und lerne neue Techniken und Materialien in unserem Atelier kennen!\n\nHier kannst du mit Farben, Formen und unterschiedlichen Materialien experimentieren, eigene Ideen entwickeln und deine Fantasie zum Ausdruck bringen.\n\nBeim künstlerischen Arbeiten entstehen individuelle Werke, neue Perspektiven und immer wieder überraschende Ergebnisse.",
+      "image": ""
+    },
+    {
+      "scene": "28-tischtennis",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "29-turnsaal",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    },
+    {
+      "scene": "19-musiksaal",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "Wie viele Saiten hat eine normale Gitarre?",
+      "answers": [
+        "4 Saiten",
+        "6 Saiten",
+        "8 Saiten"
+      ],
+      "correct": 1
+    },
+    {
+      "scene": "30-zeichensaal",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "Welche Farben gehören zu den drei Grundfarben?",
+      "answers": [
+        "Rot, Gelb und Blau",
+        "Grün, Orange und Lila",
+        "Schwarz, Weiß und Grau"
+      ],
+      "correct": 0
+    },
+    {
+      "scene": "7-bibliothek",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "Was verliert Aschenputtel auf dem Weg vom Ball?",
+      "answers": [
+        "Eine goldene Krone",
+        "Einen Schuh",
+        "Eine Halskette"
+      ],
+      "correct": 1
+    },
+    {
+      "scene": "10-chemiesaal",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "Was entsteht, wenn Wasser gefriert?",
+      "answers": [
+        "Wasserdampf",
+        "Eis",
+        "Salz"
+      ],
+      "correct": 1
+    },
+    {
+      "scene": "25-sportplatz",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "In welcher Sportart wurde Marcel Hirscher achtmal hintereinander Gesamtweltcupsieger?",
+      "answers": [
+        "Skispringen",
+        "Eishockey",
+        "Skifahren"
+      ],
+      "correct": 2
+    },
+    {
+      "scene": "21-physiksaal1",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "Warum können Astronauten auf dem Mond viel höher springen als auf der Erde?",
+      "answers": [
+        "Weil ihre Raumanzüge ihnen beim Springen helfen.",
+        "Weil es auf dem Mond keine Luft gibt.",
+        "Weil die Schwerkraft auf dem Mond geringer ist."
+      ],
+      "correct": 2
+    },
+    {
+      "scene": "26-sprachenraum",
+      "type": "quiz",
+      "offset": 0,
+      "pitch": 0,
+      "points": 10,
+      "question": "Welches englische Wort heißt übersetzt \"müde\"?",
+      "answers": [
+        "hungry",
+        "tired",
+        "excited"
+      ],
+      "correct": 1
+    },
+    {
+      "scene": "5-aufgangauen",
+      "type": "coin",
+      "offset": 0,
+      "pitch": 0,
+      "points": 5
+    }
+  ]
+}
