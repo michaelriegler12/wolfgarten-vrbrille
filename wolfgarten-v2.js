@@ -989,6 +989,31 @@ try { localStorage.removeItem(gameKey); } catch(e) {}
       var target = findSceneById(id);
       if (target) switchScene(target);
     },
+    getRoomTasks: function(roomId) {
+      return gameTasks.map(function(task, index) {
+        var entry = gameHotspots[index];
+
+        if (!entry || task.scene !== roomId) return null;
+
+        var pos = savedPositions[index] || entry.fallback;
+
+        return {
+          index: index,
+          type: task.type,
+          yaw: pos.yaw,
+          pitch: pos.pitch,
+          completed: !!done[index],
+          element: entry.element
+        };
+      }).filter(Boolean);
+    },
+
+    clickTask: function(index) {
+      if (gameHotspots[index]) {
+        gameHotspots[index].element.click();
+      }
+    },
+
     getHotspots: function() {
       return gameHotspots;
     },
